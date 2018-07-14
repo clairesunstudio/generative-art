@@ -102,11 +102,22 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n\n\nvar scene = new three__WEBPACK_IMPORTED_MODULE_0__[\"Scene\"]();\nvar camera = new three__WEBPACK_IMPORTED_MODULE_0__[\"PerspectiveCamera\"](75, window.innerWidth / window.innerHeight, 0.1, 1000);\n\nvar renderer = new three__WEBPACK_IMPORTED_MODULE_0__[\"WebGLRenderer\"]();\nrenderer.setSize(window.innerWidth, window.innerHeight);\ndocument.body.appendChild(renderer.domElement);\n\nvar geometry = new three__WEBPACK_IMPORTED_MODULE_0__[\"BoxGeometry\"](1, 1, 1);\nvar material = new three__WEBPACK_IMPORTED_MODULE_0__[\"MeshBasicMaterial\"]({ color: 0x00ff00 });\nvar cube = new three__WEBPACK_IMPORTED_MODULE_0__[\"Mesh\"](geometry, material);\nscene.add(cube);\n\ncamera.position.z = 5;\n\nfunction animate() {\n  requestAnimationFrame(animate);\n\n  cube.rotation.x += 0.01;\n  cube.rotation.y += 0.01;\n\n  renderer.render(scene, camera);\n}\n\nanimate();\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\nvar _three = __webpack_require__(/*! three */ \"./node_modules/three/build/three.module.js\");\n\nvar THREE = _interopRequireWildcard(_three);\n\n__webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }\n\nvar scene = new THREE.Scene();\nvar camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);\n\nvar renderer = new THREE.WebGLRenderer();\nrenderer.setSize(window.innerWidth, window.innerHeight);\ndocument.body.appendChild(renderer.domElement);\n\nvar geometry = new THREE.BoxGeometry(1, 1, 1);\nvar material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });\nvar cube = new THREE.Mesh(geometry, material);\nscene.add(cube);\n\ncamera.position.z = 5;\n\nfunction animate() {\n  requestAnimationFrame(animate);\n\n  cube.rotation.x += 0.01;\n  cube.rotation.y += 0.01;\n\n  renderer.render(scene, camera);\n}\n\nanimate();\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/style.css":
+/*!***********************!*\
+  !*** ./src/style.css ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./src/style.css?");
 
 /***/ })
 
