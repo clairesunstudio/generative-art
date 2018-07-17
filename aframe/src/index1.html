@@ -6,22 +6,50 @@
   <body>
     <script src="main.js"></script>
 
+
     <a-scene>
+      <a-assets>
+        <img id="qr" src="../assets/hiro.jpg">
+      </a-assets>
+
       <a-entity id="sphere" geometry="primitive: sphere"
-                material="src: ../assets/jellyfish.jpg; side: front; color: #EFEFEF;"
+                material="color: #DDDDFF; shader: flat; opacity: 0.9"
                 position="0 0.15 -5"
-                light="type: point; intensity: 5"
-                animation="property: position; easing: easeInOutQuad; dir: alternate; dur: 2000; to: 0 5 -5; loop: true"></a-entity>
 
-      <a-entity id="ocean" ocean="density: 20; width: 50; depth: 50; speed: 4"
+                light="color: #DDDDFF; distance: 50; intensity: 0.5; type: point"></a-entity>
+
+
+      <!-- Using the asset management system. -->
+      <a-image src="#qr" width="200" height="200" position="0 0.15 1"></a-image>
+      <!-- <a-entity id="ocean" ocean="density: 20; width: 50; depth: 50; speed: 5"
                 material="color: #9CE3F9; opacity: 0.75; metalness: 0; roughness: 1"
-                rotation="-90 0 0"></a-entity>
+                rotation="-90 0 0"></a-entity> -->
 
-      <a-entity id="sky" geometry="primitive: sphere; radius: 5000"
-                material="shader: gradient; topColor: 235 235 245; bottomColor: 185 185 210"
-                scale="-1 1 1"></a-entity>
+      <a-plane id="still" position="0 0 -4" rotation="-90 0 0" width="500" height="500"
+                material="color: #9CE3F9; opacity: 0.75; metalness: 0; roughness: 1"></a-plane>
+      <a-sky color="#101010"></a-sky>
 
-      <a-entity id="light" light="type: ambient; color: blue"></a-entity>
+      <a-entity id="light" light="type: ambient; color: #9CE3F9"></a-entity>
     </a-scene>
+
+    <div class="controls">
+      <button id="stir">Stir Water</button>
+      <button id="still">Still Water</button>
+    </div>
+
+    <script>
+    document.querySelector('button').addEventListener('click', (e) => {
+      Switch (e.target.id) {
+        case 'stir':
+          document.getElementById('ocean').hidden= false;
+          document.getElementById('still').hidden= true;
+        break;
+        case 'still':
+          document.getElementById('ocean').hidden= true;
+          document.getElementById('still').hidden= false;
+        break;
+      }
+    })
+    </script>
   </body>
 </html>
