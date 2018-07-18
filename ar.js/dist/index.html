@@ -9,7 +9,14 @@
     <script>THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'</script>
 
     <a-scene embedded artoolkit='sourceType: webcam;'>
-    	<a-sphere src="../assets/jellyfish.jpg" radius="1" position="0 0.5 0" segments-height="53" side="front"></a-sphere>
+      <a-sphere src="../assets/jellyfish.jpg" radius="1" position="0 0.5 -4" segments-height="53" rotation="0 0 120" opacity="0.9">
+        <a-animation attribute="rotation"
+             dur="10000"
+             fill="forwards"
+             to="0 360 0"
+             direction="alternate"
+             repeat="indefinite"></a-animation>
+      </a-sphere>
   		<a-marker-camera preset='hiro'></a-marker-camera>
   	</a-scene>
   </body>
